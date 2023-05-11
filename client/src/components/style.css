@@ -1,0 +1,25 @@
+.soccer-results-row {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+  }
+  
+  .soccer-results-row-line {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+  }
+  
+  .soccer-results-row-bar {
+    position: absolute;
+    width: 10px;
+  }
+  
+  .soccer-results-row-bar.victory {
+    background-color: green;
+  }
+  
+  .soccer-results-row-bar.defeat {
+    background-color: red;
+  }
+  
