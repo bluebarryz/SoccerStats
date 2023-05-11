@@ -1,4 +1,5 @@
 import Link from "@mui/material/Link";
+import React from "react";
 
 export const PLAYER_STATS = [
     { headerName: "Age", field: "age" },
