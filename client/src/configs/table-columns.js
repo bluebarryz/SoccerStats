@@ -1,5 +1,6 @@
 import Link from "@mui/material/Link";
 import React from "react";
+import { logosMap } from "./logosMap";
 
 export const PLAYER_STATS = [
     { headerName: "Age", field: "age" },
@@ -77,6 +78,13 @@ export const TEAM_STATS = [
 
 export const TEAM_FIXTURE_STATS = [
     {
+        headerName: "",
+        field: "logo",
+        renderCell: (row) => (
+            <img src={`/logos/${logosMap.get(row.oppId)}.png`} width="25px" />
+        ),
+    },
+    {
         headerName: "Opponent",
         field: "oppName",
         renderCell: (row) => (
@@ -143,6 +151,13 @@ export const PLAYER_FIXTURE_STATS = [
 
 export const STANDINGS = [
     { headerName: "Rank", field: "finish" },
+    {
+        headerName: "",
+        field: "logo",
+        renderCell: (row) => (
+            <img src={`/logos/${logosMap.get(row.teamId)}.png`} width="25px" />
+        ),
+    },
     {
         headerName: "Team",
         field: "teamName",

@@ -18,6 +18,7 @@ import {
     TEAM_FIXTURE_STATS,
 } from "../configs/table-columns.js";
 import DataTable from "../components/DataTable";
+import { TeamBio } from "../components/TeamBio.js";
 
 const TeamSeason = () => {
     const { teamId, season } = useParams();
@@ -50,6 +51,7 @@ const TeamSeason = () => {
 
     return (
         <>
+            <TeamBio />
             {teamStatsRow && (
                 <DataTable
                     header="Team Stats"

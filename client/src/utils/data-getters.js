@@ -92,3 +92,17 @@ export const getPlayerFixtureStats = async (playerId, season) => {
     const teamFixtureStats = await res.json();
     return teamFixtureStats;
 };
+
+export const getTeamBio = async (teamId) => {
+    const res = await fetch(
+        `http://localhost:5000/team-bios?teamId=${teamId}`,
+        {
+            headers: {
+                "Cache-Control": "no-cache",
+                Pragma: "no-cache",
+            },
+        }
+    );
+    const bio = await res.json();
+    return bio;
+};

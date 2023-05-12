@@ -49,7 +49,9 @@ const DataTable = ({ header, columns, rows }) => {
                                             >
                                                 {col.renderCell
                                                     ? col.renderCell(row)
-                                                    : row[col.field]}
+                                                    : row[col.field] !== null
+                                                    ? row[col.field]
+                                                    : 0}
                                             </TableCell>
                                         );
                                     })}

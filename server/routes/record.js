@@ -190,4 +190,28 @@ recordRoutes.route("/standings").get((req, res) => {
     }
 });
 
+recordRoutes.route("/team-bios").get((req, res) => {
+    let db_connect = dbo.getDb("soccer_stats");
+
+    // Extract the query parameters
+    const teamId = parseInt(req.query.teamId);
+
+    if (teamId) {
+        db_connect
+            .collection("team_bios")
+            .findOne({ teamId: teamId }, function (err, result) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json({
+                        error: "Internal server error",
+                    });
+                } else if (!result) {
+                    res.status(404).json({ error: "Document not found" });
+                } else {
+                    res.json(result);
+                }
+            });
+    }
+});
+
 module.exports = recordRoutes;
