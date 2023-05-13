@@ -111,6 +111,13 @@ export const TEAM_FIXTURE_STATS = [
 
 export const PLAYER_FIXTURE_STATS = [
     {
+        headerName: "",
+        field: "myTeamLogo",
+        renderCell: (row) => (
+            <img src={`/logos/${logosMap.get(row.teamId)}.png`} width="25px" />
+        ),
+    },
+    {
         headerName: "Team",
         field: "teamName",
         renderCell: (row) => (
@@ -120,10 +127,19 @@ export const PLAYER_FIXTURE_STATS = [
         ),
     },
     {
+        headerName: "",
+        field: "oppLogo",
+        renderCell: (row) => (
+            <img src={`/logos/${logosMap.get(row.oppId)}.png`} width="25px" />
+        ),
+    },
+    {
         headerName: "Opp",
         field: "oppName",
         renderCell: (row) => (
-            <Link href={`/teams/${row.oppId}/${row.oppId}`}>{row.oppName}</Link>
+            <Link href={`/teams/${row.oppId}/${row.season}`}>
+                {row.oppName}
+            </Link>
         ),
     },
     { headerName: "Result", field: "result" },

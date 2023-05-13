@@ -214,4 +214,28 @@ recordRoutes.route("/team-bios").get((req, res) => {
     }
 });
 
+recordRoutes.route("/player-bios").get((req, res) => {
+    let db_connect = dbo.getDb("soccer_stats");
+
+    // Extract the query parameters
+    const playerId = parseInt(req.query.playerId);
+
+    if (playerId) {
+        db_connect
+            .collection("player_bios")
+            .findOne({ playerId: playerId }, function (err, result) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json({
+                        error: "Internal server error",
+                    });
+                } else if (!result) {
+                    res.status(404).json({ error: "Document not found" });
+                } else {
+                    res.json(result);
+                }
+            });
+    }
+});
+
 module.exports = recordRoutes;

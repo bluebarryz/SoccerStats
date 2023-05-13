@@ -1,3 +1,5 @@
+import { getHyphenatedSeason } from "./utils";
+
 export const getTeamStatsRow = (teamObj) => {
     const { teamStats } = teamObj;
     const wins = teamStats.fixtures.wins.total;
@@ -26,7 +28,7 @@ export const getTeamOverviewRow = (teamObj) => {
     const teamStats = getTeamStatsRow(teamObj);
     return {
         season: teamObj.season,
-        seasonWithHyphen: `${teamObj.season}-${(teamObj.season + 1) % 100}`,
+        seasonWithHyphen: `${getHyphenatedSeason(teamObj.season)}`,
         teamId: teamObj.teamId,
         ...teamStats,
     };
@@ -54,7 +56,7 @@ export const getPlayerOverviewRow = (playerObj) => {
     const stats = getPlayerStatsRow(playerObj);
     return {
         season: playerObj.season,
-        seasonWithHyphen: `${playerObj.season}-${(playerObj.season + 1) % 100}`,
+        seasonWithHyphen: `${getHyphenatedSeason(playerObj.season)}`,
         teamId: playerObj.teamId,
         ...stats,
     };

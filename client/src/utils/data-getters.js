@@ -106,3 +106,17 @@ export const getTeamBio = async (teamId) => {
     const bio = await res.json();
     return bio;
 };
+
+export const getPlayerBio = async (playerId) => {
+    const res = await fetch(
+        `http://localhost:5000/player-bios?playerId=${playerId}`,
+        {
+            headers: {
+                "Cache-Control": "no-cache",
+                Pragma: "no-cache",
+            },
+        }
+    );
+    const bio = await res.json();
+    return bio;
+};

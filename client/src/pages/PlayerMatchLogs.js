@@ -5,6 +5,7 @@ import { getPlayerFixtureStats } from "../utils/data-getters.js";
 import { getPlayerFixtureStatsRows } from "../utils/table-rows.js";
 import { PLAYER_FIXTURE_STATS } from "../configs/table-columns.js";
 import DataTable from "../components/DataTable";
+import { PlayerBio } from "../components/PlayerBio.js";
 
 const PlayerMatchLogs = () => {
     const { playerId, season } = useParams();
@@ -27,6 +28,7 @@ const PlayerMatchLogs = () => {
 
     return (
         <>
+            <PlayerBio />
             {playerFixtureTables &&
                 playerFixtureTables.map((rows) => (
                     <DataTable

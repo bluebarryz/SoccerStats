@@ -9,6 +9,7 @@ import {
     TOP_SCORERS,
 } from "../configs/table-columns.js";
 import DataTable from "../components/DataTable";
+import { getHyphenatedSeason } from "../utils/utils.js";
 
 export const LeagueSeason = () => {
     const { season } = useParams();
@@ -29,6 +30,10 @@ export const LeagueSeason = () => {
 
     return (
         <>
+            <h1>
+                Premier League {`${getHyphenatedSeason(season)} `}
+                Season
+            </h1>
             {standingRows && (
                 <DataTable
                     header="Standings"

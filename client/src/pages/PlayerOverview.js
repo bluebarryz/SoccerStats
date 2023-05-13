@@ -5,6 +5,8 @@ import { getPlayerSeasons } from "../utils/data-getters.js";
 import { getPlayerOverviewRow } from "../utils/table-rows.js";
 import { PLAYER_STATS, PLAYER_OVERVIEW } from "../configs/table-columns.js";
 import DataTable from "../components/DataTable";
+import { PlayerMatchLogLinks } from "../components/PlayerMatchLogLinks.js";
+import { PlayerBio } from "../components/PlayerBio.js";
 
 const PlayerOverview = () => {
     const { playerId } = useParams();
@@ -25,11 +27,18 @@ const PlayerOverview = () => {
     return (
         <>
             {playerSeasonRows && (
-                <DataTable
-                    header="Player Stats"
-                    columns={[...PLAYER_OVERVIEW, ...PLAYER_STATS]}
-                    rows={playerSeasonRows}
-                />
+                <>
+                    <PlayerBio />
+                    <DataTable
+                        header="Player Stats"
+                        columns={[...PLAYER_OVERVIEW, ...PLAYER_STATS]}
+                        rows={playerSeasonRows}
+                    />
+                    <PlayerMatchLogLinks
+                        seasons={playerSeasonRows.map((row) => row.season)}
+                        playerId={playerId}
+                    />
+                </>
             )}
         </>
     );

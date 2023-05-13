@@ -25,6 +25,7 @@ const DataTable = ({ header, columns, rows }) => {
                                     <TableCell
                                         key={col.headerName}
                                         align="left"
+                                        sx={{ whiteSpace: "nowrap" }}
                                     >
                                         {col.headerName}
                                     </TableCell>
@@ -46,6 +47,7 @@ const DataTable = ({ header, columns, rows }) => {
                                             <TableCell
                                                 key={col.field}
                                                 align="left"
+                                                sx={{ whiteSpace: "nowrap" }}
                                             >
                                                 {col.renderCell
                                                     ? col.renderCell(row)

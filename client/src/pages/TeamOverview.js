@@ -26,7 +26,7 @@ const TeamOverview = () => {
             <TeamBio />
             {teamStatRows && (
                 <DataTable
-                    header="Team Stats"
+                    header="Premier League Performance Timeline"
                     columns={[...TEAM_OVERVIEW, ...TEAM_STATS]}
                     rows={teamStatRows}
                 />
