@@ -5,8 +5,8 @@ An online database for the English Premier League
 <h2>Tech specs</h2>
 <ul>
   <li>Built with the MERN stack</li>
-  <li>Created custom script (data-script.js) for populating MongoDB collections with data retrieved from [API-FOOTBALL](https://www.api-football.com/).</li>
-  <li>Created reusable config-driven table component [/client/src/components/DataTable.js]([url](https://github.com/bluebarryz/SoccerStats/blob/main/client/src/components/DataTable.js)) for displaying different tables of stats
+  <li>Created custom script (data-script.js) for populating MongoDB collections with data retrieved from <a href="https://www.api-football.com/">API-FOOTBALL</a>.</li>
+  <li>Created reusable config-driven table component (<a href="https://github.com/bluebarryz/SoccerStats/blob/main/client/src/components/DataTable.js">/client/src/components/DataTable.js</a>) for displaying different types of stat tables.</li>
 </ul>
 <h2>Pages</h2>
 
