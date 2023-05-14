@@ -23,3 +23,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; 
+    text-align: left;
+    background-color: #eb34b7; 
+    position: fixed; 
+    top: 0px; 
+    left: 0px;
+    width: 100vw; 
+    transition: top 0.1s; 
+    height: 3em;
+    z-index: 10;
+}
+
+#homeLink {
+  background-color: #3ed6ed;
+  color: black;
+}
+
+
+
+.navbar a, .navbar .dropdown {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.5em;
+    font-weight: bolder;
+    line-height: 0.1em;
+    padding: 0.95em;
+    color: rgb(255, 255, 255)
+
+}
+/* hover effects */
+
+#navbar a:hover {
+  color: #2186ab;
+}
+
+.dropdown-content {
+  background-color: darkgrey;
+  display: none;
+  position: absolute;
+  top: 3em;
+  width: 100vw;
+}
+
+#seasonsDropdown:hover ~ #seasonsDropdown-content {display: block;}
+#seasonsDropdown-content:hover {display:block;}
+
+#teamsDropdown:hover ~ #teamsDropdown-content {display: block;}
+#teamsDropdown-content:hover {display:block;}

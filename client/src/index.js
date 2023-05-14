@@ -10,6 +10,7 @@ import TeamOverview from "./pages/TeamOverview";
 import { LeagueSeason } from "./pages/LeagueSeason";
 import { LeagueOverview } from "./pages/LeagueOverview";
 import PlayerMatchLogs from "./pages/PlayerMatchLogs";
+import { Navbar } from "./components/Navbar";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,8 @@ const darkTheme = createTheme({
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <ThemeProvider theme={darkTheme}>
+            <Navbar />
+
             <main>
                 <RouterProvider router={router} />
             </main>
