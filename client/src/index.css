@@ -15,8 +15,13 @@ main {
   color:white;
 }
 
+
 h1, h2 {
   color: #3ed6ed;
+}
+
+.pageHeading {
+  font-size: 5em;
 }
 
 code {
@@ -25,16 +30,16 @@ code {
 }
 
 .navbar {
-  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; 
-    text-align: left;
-    background-color: #eb34b7; 
-    position: fixed; 
-    top: 0px; 
-    left: 0px;
-    width: 100vw; 
-    transition: top 0.1s; 
-    height: 3em;
-    z-index: 10;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; 
+  text-align: left;
+  background-color: #eb34b7; 
+  position: fixed; 
+  top: 0px; 
+  left: 0px;
+  width: 100vw; 
+  transition: top 0.1s; 
+  height: 3em;
+  z-index: 10;
 }
 
 #homeLink {
@@ -51,11 +56,10 @@ code {
   padding: 15px;
   text-decoration: none;
   font-size: 1.5em;
-    font-weight: bolder;
-    line-height: 0.1em;
-    padding: 0.95em;
-    color: rgb(255, 255, 255)
-
+  font-weight: bolder;
+  line-height: 0.1em;
+  padding: 0.95em;
+  color: rgb(255, 255, 255)
 }
 /* hover effects */
 
@@ -64,15 +68,25 @@ code {
 }
 
 .dropdown-content {
-  background-color: darkgrey;
+  background-color: rgb(139, 139, 139);
   display: none;
   position: absolute;
   top: 3em;
   width: 100vw;
 }
 
-#seasonsDropdown:hover ~ #seasonsDropdown-content {display: block;}
-#seasonsDropdown-content:hover {display:block;}
+#seasonsDropdown:hover ~ #seasonsDropdown-content {
+  display: block;
+}
 
-#teamsDropdown:hover ~ #teamsDropdown-content {display: block;}
-#teamsDropdown-content:hover {display:block;}
+#seasonsDropdown-content:hover {
+  display:block;
+}
+
+#teamsDropdown:hover ~ #teamsDropdown-content {
+  display: block;
+}
+
+#teamsDropdown-content:hover {
+  display:block;
+}

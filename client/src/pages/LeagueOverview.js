@@ -22,6 +22,7 @@ export const LeagueOverview = () => {
 
     return (
         <>
+            <h1 className="pageHeading">Premier League</h1>
             {console.log(leagueOverviewRows)}
             {leagueOverviewRows && (
                 <DataTable

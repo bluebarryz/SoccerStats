@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App.js";
 import TeamSeason from "./pages/TeamSeason";
 import PlayerOverview from "./pages/PlayerOverview";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -11,11 +10,12 @@ import { LeagueSeason } from "./pages/LeagueSeason";
 import { LeagueOverview } from "./pages/LeagueOverview";
 import PlayerMatchLogs from "./pages/PlayerMatchLogs";
 import { Navbar } from "./components/Navbar";
+import { Home } from "./pages/Home";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: <Home />,
     },
     {
         path: "/teams/:teamId/:season",
@@ -53,7 +53,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <ThemeProvider theme={darkTheme}>
             <Navbar />
-
             <main>
                 <RouterProvider router={router} />
             </main>

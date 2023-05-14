@@ -30,7 +30,7 @@ export const LeagueSeason = () => {
 
     return (
         <>
-            <h1>
+            <h1 className="pageHeading">
                 Premier League {`${getHyphenatedSeason(season)} `}
                 Season
             </h1>
