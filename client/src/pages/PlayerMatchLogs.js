@@ -27,17 +27,22 @@ const PlayerMatchLogs = () => {
     }, []);
 
     return (
-        <>
-            <PlayerBio />
-            {playerFixtureTables &&
-                playerFixtureTables.map((rows) => (
-                    <DataTable
-                        header={`Match Logs - ${rows[0].teamName}`}
-                        columns={PLAYER_FIXTURE_STATS}
-                        rows={rows}
-                    />
-                ))}
-        </>
+        playerFixtureTables && (
+            <>
+                <PlayerBio />
+                {playerFixtureTables.map(
+                    (rows) =>
+                        rows.length > 0 && (
+                            <DataTable
+                                key={rows[0].teamName}
+                                header={`Match Logs - ${rows[0].teamName}`}
+                                columns={PLAYER_FIXTURE_STATS}
+                                rows={rows}
+                            />
+                        )
+                )}
+            </>
+        )
     );
 };
 

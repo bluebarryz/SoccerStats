@@ -1,6 +1,6 @@
 import Link from "@mui/material/Link";
 import React from "react";
-import { logosMap } from "./logosMap";
+import { logosMap, namesMap } from "./logosMap";
 
 export const PLAYER_STATS = [
     { headerName: "Age", field: "age" },
@@ -46,6 +46,26 @@ export const PLAYER_OVERVIEW = [
             </Link>
         ),
     },
+    {
+        headerName: "",
+        field: "myTeamLogo",
+        renderCell: (row) => (
+            <img
+                src={`/logos/${logosMap.get(row.teamId)}.svg`}
+                width="25px"
+                alt={`${logosMap.get(row.teamId)} team logo`}
+            />
+        ),
+    },
+    {
+        headerName: "Team",
+        field: "teamName",
+        renderCell: (row) => (
+            <Link href={`/teams/${row.teamId}/${row.season}`}>
+                {namesMap.get(row.teamId)}
+            </Link>
+        ),
+    },
 ];
 
 export const TEAM_OVERVIEW = [
@@ -81,7 +101,11 @@ export const TEAM_FIXTURE_STATS = [
         headerName: "",
         field: "logo",
         renderCell: (row) => (
-            <img src={`/logos/${logosMap.get(row.oppId)}.png`} width="25px" />
+            <img
+                src={`/logos/${logosMap.get(row.oppId)}.svg`}
+                width="25px"
+                alt={`${logosMap.get(row.oppId)} team logo`}
+            />
         ),
     },
     {
@@ -114,7 +138,11 @@ export const PLAYER_FIXTURE_STATS = [
         headerName: "",
         field: "myTeamLogo",
         renderCell: (row) => (
-            <img src={`/logos/${logosMap.get(row.teamId)}.png`} width="25px" />
+            <img
+                src={`/logos/${logosMap.get(row.teamId)}.svg`}
+                width="25px"
+                alt={`${logosMap.get(row.teamId)} team logo`}
+            />
         ),
     },
     {
@@ -130,7 +158,11 @@ export const PLAYER_FIXTURE_STATS = [
         headerName: "",
         field: "oppLogo",
         renderCell: (row) => (
-            <img src={`/logos/${logosMap.get(row.oppId)}.png`} width="25px" />
+            <img
+                src={`/logos/${logosMap.get(row.oppId)}.svg`}
+                width="25px"
+                alt={`${logosMap.get(row.oppId)} team logo`}
+            />
         ),
     },
     {
@@ -171,7 +203,11 @@ export const STANDINGS = [
         headerName: "",
         field: "logo",
         renderCell: (row) => (
-            <img src={`/logos/${logosMap.get(row.teamId)}.png`} width="25px" />
+            <img
+                src={`/logos/${logosMap.get(row.teamId)}.svg`}
+                width="25px"
+                alt={`${logosMap.get(row.teamId)} team logo`}
+            />
         ),
     },
     {

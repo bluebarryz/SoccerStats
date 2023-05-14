@@ -35,7 +35,11 @@ const PlayerOverview = () => {
                         rows={playerSeasonRows}
                     />
                     <PlayerMatchLogLinks
-                        seasons={playerSeasonRows.map((row) => row.season)}
+                        seasons={[
+                            ...new Set(
+                                playerSeasonRows.map((row) => row.season)
+                            ),
+                        ]}
                         playerId={playerId}
                     />
                 </>

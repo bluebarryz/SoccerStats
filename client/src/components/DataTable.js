@@ -21,9 +21,9 @@ const DataTable = ({ header, columns, rows }) => {
                     <Table stickyHeader sx={{}} size="small">
                         <TableHead>
                             <TableRow key={"header"}>
-                                {columns.map((col) => (
+                                {columns.map((col, ind) => (
                                     <TableCell
-                                        key={col.headerName}
+                                        key={`${col.headerName}-${ind}`}
                                         align="left"
                                         sx={{ whiteSpace: "nowrap" }}
                                     >
@@ -45,7 +45,7 @@ const DataTable = ({ header, columns, rows }) => {
                                     {columns.map((col) => {
                                         return (
                                             <TableCell
-                                                key={col.field}
+                                                key={`${col.field}-${ind}`}
                                                 align="left"
                                                 sx={{ whiteSpace: "nowrap" }}
                                             >

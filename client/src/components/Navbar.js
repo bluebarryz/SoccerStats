@@ -7,18 +7,18 @@ const seasons = [2016, 2017, 2018, 2019, 2020, 2021];
 
 export const Navbar = () => {
     return (
-        <div class="navbar">
+        <div className="navbar">
             <a id="homeLink" href="/">
                 SoccerStats
             </a>
             <a href="/league">Premier League</a>
-            <div class="dropdown" id="seasonsDropdown" href="/">
+            <div className="dropdown" id="seasonsDropdown" href="/">
                 Seasons
             </div>
-            <div class="dropdown" id="teamsDropdown" href="/teams/33">
+            <div className="dropdown" id="teamsDropdown" href="/teams/33">
                 Teams
             </div>
-            <div class="dropdown-content" id="seasonsDropdown-content">
+            <div className="dropdown-content" id="seasonsDropdown-content">
                 {seasons.map((season) => (
                     <Link
                         href={`/league/${season}`}
@@ -29,13 +29,14 @@ export const Navbar = () => {
                     </Link>
                 ))}
             </div>
-            <div class="dropdown-content" id="teamsDropdown-content">
+            <div className="dropdown-content" id="teamsDropdown-content">
                 {Array.from(logosMap.keys()).map((teamId) => (
                     <Link key={teamId} href={`/teams/${teamId}`}>
                         <img
                             width="20em"
                             style={{ marginRight: "5px" }}
-                            src={`/logos/${logosMap.get(teamId)}.png`}
+                            src={`/logos/${logosMap.get(teamId)}.svg`}
+                            alt={`${logosMap.get(teamId)} team logo`}
                         />
                         {namesMap.get(teamId)}
                     </Link>

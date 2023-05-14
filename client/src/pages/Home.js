@@ -34,12 +34,13 @@ export const Home = () => {
                         xs={12}
                         sm={3}
                         sx={{ marginBottom: "2em", textAlign: "center" }}
+                        key={`${teamId}-grid`}
                     >
                         <Stack>
                             <>
                                 <h2>
                                     <Link
-                                        key={teamId}
+                                        key={`${teamId}-link`}
                                         href={`/teams/${teamId}`}
                                     >
                                         {namesMap.get(teamId)}
@@ -48,9 +49,10 @@ export const Home = () => {
                             </>
                             <>
                                 <img
-                                    key={logosMap.get(teamId)}
+                                    key={`${logosMap.get(teamId)}-logo`}
                                     style={{ marginRight: "5px" }}
-                                    src={`/logos/${logosMap.get(teamId)}.png`}
+                                    src={`/logos/${logosMap.get(teamId)}.svg`}
+                                    alt={`${logosMap.get(teamId)} team logo`}
                                 />
                             </>
                         </Stack>

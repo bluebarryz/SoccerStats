@@ -34,7 +34,11 @@ export const TeamBio = () => {
                     }}
                 >
                     <Grid item xs={12} sm={3}>
-                        <img width="90%" src={`/logos/${logoSrc}.png`} />
+                        <img
+                            width="90%"
+                            src={`/logos/${logoSrc}.svg`}
+                            alt={`${logoSrc} team logo`}
+                        />
                     </Grid>
                     <Grid item xs={12} sm={9}>
                         <h1>
