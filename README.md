@@ -7,7 +7,7 @@ https://soccer-stats-epl.herokuapp.com/
 <ul>
   <li>Built with the MERN stack</li>
   <li>Created custom script (data-script.js) for populating MongoDB collections with data retrieved from <a href="https://www.api-football.com/">API-FOOTBALL</a>.</li>
-  <li>Created reusable config-driven table component (<a href="https://github.com/bluebarryz/SoccerStats/blob/main/client/src/components/DataTable.js">/client/src/components/DataTable.js</a>) for displaying different types of stat tables.</li>
+  <li>Created reusable config-driven table component for displaying different types of stat tables.</li>
 </ul>
 <h2>Pages</h2>
 
