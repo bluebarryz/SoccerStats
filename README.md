@@ -1,7 +1,6 @@
 # SoccerStats
 
 An online database for the English Premier League.
-https://soccer-stats-epl.herokuapp.com/
 
 <h2>Tech specs</h2>
 <ul>
